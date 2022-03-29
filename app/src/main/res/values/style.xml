@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar.TitleText" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontWeight">800</item>
+    </style>
+</resources>

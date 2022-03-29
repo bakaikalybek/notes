@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="8dp"
+    android:id="@+id/card_note">
+    <TextView
+        android:id="@+id/tv_note_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="40dp"
+        android:text="New Added Note Item "
+        android:textSize="22sp"
+        android:textColor="@color/black"/>
+
+</androidx.cardview.widget.CardView>

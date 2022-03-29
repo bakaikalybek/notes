@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="kg.bakai.notes.presentation.features.notes_feature.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="kg.bakai.notes.presentation.features.details_feature.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <action
+            android:id="@+id/action_detailsFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="kg.bakai.notes.presentation.features.add_note_feature.AddNoteFragment"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note">
+        <argument
+            android:name="note"
+            app:argType="kg.bakai.notes.domain.model.Note"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="kg.bakai.notes.presentation.features.category_feature.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryDetailsFragment"
+            app:destination="@id/categoryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailsFragment"
+        android:name="kg.bakai.notes.presentation.features.category_details_feature.CategoryDetailsFragment"
+        android:label="fragment_category_details"
+        tools:layout="@layout/fragment_category_details" >
+        <action
+            android:id="@+id/action_categoryDetailsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="category"
+            app:argType="kg.bakai.notes.domain.model.Category"
+            app:nullable="false"/>
+    </fragment>
+</navigation>
